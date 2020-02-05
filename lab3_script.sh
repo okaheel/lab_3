@@ -15,6 +15,13 @@ read regex
 
 grep $regex $filename
 
+email_pattern='^[a-zA-Z0-9]\+@[a-zA-Z0-9]\+\.[a-z]\{2,\}'
+grep "$email_pattern" $filename >> email_results.txt
+
 echo "number of phone numbers:"
 grep -o '[0-9]\{3\}\-[0-9]\{3\}\-[0-9]\{4\}' $filename
 grep -o '[0-9]\{3\}\-[0-9]\{3\}\-[0-9]\{4\}' $filename -c
+
+git add email_results.txt
+git commit -m "commited from scipt to repo to update  results file"
+git push
