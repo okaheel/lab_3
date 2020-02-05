@@ -16,5 +16,5 @@ read regex
 grep $regex $filename
 
 echo "number of phone numbers:"
-grep '\([0-9]\{3\}\)[ -]\?[0-9]\{3\}[ -]\?[0-9]\{4\}' $filename 
-grep '\(([0-9]\{3\})\|[0-9]\{3\}\)[ -]\?[0-9]\{3\}[ -]\?[0-9]\{4\}' $filename -c
+grep -o '[0-9]\{3\}\-[0-9]\{3\}\-[0-9]\{4\}' $filename
+grep -o '[0-9]\{3\}\-[0-9]\{3\}\-[0-9]\{4\}' $filename -c
